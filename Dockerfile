@@ -12,4 +12,5 @@ FROM opensearchproject/opensearch:2.14.0
 RUN /usr/share/opensearch/bin/opensearch-plugin install --batch \
     https://github.com/WorksApplications/elasticsearch-sudachi/releases/download/v3.2.2/opensearch-2.14.0-analysis-sudachi-3.2.2.zip
 COPY --from=0 /sudachi-dictionary/sudachi-dictionary-20240409 config/sudachi/
+RUN mkdir -p /usr/share/opensearch/data && chown 1000:1000 /usr/share/opensearch/data
 
