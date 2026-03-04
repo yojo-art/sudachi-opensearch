@@ -10,7 +10,7 @@ RUN unzip -o sudachi-dictionary.zip
 
 FROM opensearchproject/opensearch:3.5.0
 RUN /usr/share/opensearch/bin/opensearch-plugin install --batch \
-    https://github.com/WorksApplications/elasticsearch-sudachi/releases/download/v3.4.0/opensearch-2.11.1-analysis-sudachi-3.4.0.zip
+    https://github.com/WorksApplications/elasticsearch-sudachi/releases/download/v3.4.0/opensearch-2.19.4-analysis-sudachi-3.4.0.zip
 COPY --from=0 /sudachi-dictionary/sudachi-dictionary-20260116 config/sudachi/
 RUN mkdir -p /usr/share/opensearch/data && chown 1000:1000 /usr/share/opensearch/data
 
